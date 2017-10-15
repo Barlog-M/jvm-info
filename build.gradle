@@ -80,7 +80,7 @@ dependencies {
 
 	compile "org.slf4j:slf4j-api:$slf4jVer"
 	compile "ch.qos.logback:logback-classic:$logbackVer"
-	compile "org.fusesource.jansi:jansi:$jAnsiVer"
+	//compile "org.fusesource.jansi:jansi:$jAnsiVer"
 	compile "org.slf4j:jcl-over-slf4j:$slf4jVer"
 
 	compile "io.undertow:undertow-core:$undertowVer"
