@@ -5,7 +5,6 @@ buildscript {
 		slf4jVer = '1.7.25'
 		kotlinLoggingVer = '1.4.6'
 		logbackVer = '1.2.3'
-		jAnsiVer = '1.16'
 
 		undertowVer = '1.4.20.Final'
 		jacksonVer = '2.9.1'
@@ -79,8 +78,8 @@ dependencies {
 	compile "io.github.microutils:kotlin-logging:$kotlinLoggingVer"
 
 	compile "org.slf4j:slf4j-api:$slf4jVer"
-	compile "ch.qos.logback:logback-classic:$logbackVer"
-	compile "org.slf4j:jcl-over-slf4j:$slf4jVer"
+	runtime "ch.qos.logback:logback-classic:$logbackVer"
+	runtime "org.slf4j:jcl-over-slf4j:$slf4jVer"
 
 	compile "io.undertow:undertow-core:$undertowVer"
 
