@@ -112,8 +112,9 @@ shadowJar {
 	version = null
 }
 
-wrapper {
-	gradleVersion '4.2.1'
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.3.1'
+	distributionType = Wrapper.DistributionType.ALL
 }
 
 // https://github.com/palantir/gradle-docker
@@ -125,8 +126,8 @@ docker {
 	files shadowJar.outputs
 	dockerfile file('src/main/docker/Dockerfile')
 	buildArgs([
-		JAVA_OPTS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap',
-		PORT     : "8080"
+		JAVA_OPTS: '-XX:-TieredCompilation -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1',
+		PORT     : '8080'
 	])
 	pull true
 }
